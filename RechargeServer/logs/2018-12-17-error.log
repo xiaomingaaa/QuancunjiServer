@@ -1,0 +1,10 @@
+查询卡号信息是否存在时出现错误:Operation not allowed after ResultSet closed,错误代码：0		2018-12-17 15:50:51
+查询卡号信息是否存在时出现错误:Operation not allowed after ResultSet closed,错误代码：0		2018-12-17 16:01:32
+查询zf_recharge_detail语句时(可能出现json的错误)出现错误：JSONObject["credit"] is not a number.,错误代码：0		2018-12-17 16:38:49
+查询zf_recharge_detail语句时(可能出现json的错误)出现错误：JSONObject["credit"] is not a number.,错误代码：0		2018-12-17 16:42:21
+最后返回json结果时出现了错误：Expected a ',' or '}' at character 154 of {error_code:0,msg:QUFCQjA3NTljMDU3NzI5ZWUyOWYwMWFkMGIxMGM3ZDlhODQxaG56ZjEyNDkzMnw1Njc1OHwyNS42fDIwMTgxMjE3NDQ3NzEyNDE1NjZ8eGlhbmppbmNob25nemhpemZqeUJCQUE=}		2018-12-17 16:43:38
+最后返回json结果时出现了错误：Expected a ',' or '}' at character 154 of {error_code:0,msg:QUFCQjA3NTljMDU3NzI5ZWUyOWYwMWFkMGIxMGM3ZDlhODQxaG56ZjEyNDkzMnw1Njc1OHwyNS42fDIwMTgxMjE3NDQ3NzEyNDE1NjZ8eGlhbmppbmNob25nemhpemZqeUJCQUE=}		2018-12-17 16:46:40
+查询zf_recharge_detail语句时(可能出现json的错误)出现错误：JSONObject["trade_no"] not found.,错误代码：0		2018-12-17 17:24:08
+查询zf_recharge_detail语句时(可能出现json的错误)出现错误：JSONObject["trade_no"] not found.,错误代码：0		2018-12-17 17:26:59
+查询zf_recharge_detail语句时(可能出现json的错误)出现错误：JSONObject["trade_no"] not found.,错误代码：0		2018-12-17 17:32:55
+查询zf_recharge_detail语句时(可能出现json的错误)出现错误：JSONObject["trade_no"] not found.,错误代码：0		2018-12-17 17:33:48
