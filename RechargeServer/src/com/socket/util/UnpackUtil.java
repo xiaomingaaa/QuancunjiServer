@@ -51,7 +51,7 @@ public class UnpackUtil {
 			else
 			{
 				String back=String.format("{error_code:%d,msg:\"%s\"}", 101,"数据格式有问题");
-				array.put(new JSONObject(back));
+				array.put(new JSONObject(back)); 
 				array.put(new JSONObject(back));
 			}
 		}catch (Exception e) {

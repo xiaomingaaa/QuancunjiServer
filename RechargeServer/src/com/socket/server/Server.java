@@ -27,7 +27,8 @@ public class Server {
 			serverSocketChannel=ServerSocketChannel.open();
 			//设置socket为非阻塞模式
 			serverSocketChannel.configureBlocking(false);
-			serverSocketChannel.socket().bind(new InetSocketAddress(3501));
+			serverSocketChannel.socket().bind(new InetSocketAddress(ConfigUtil.GetConfig().getPort()));
+			//System.out.print(ConfigUtil.GetConfig().getPort());
 			selector=Selector.open();//打开选择器
 			serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
 			System.out.println("服务器开始监听。。。。");
@@ -47,7 +48,7 @@ public class Server {
 			//返回已经就绪了的事件
 			Set<SelectionKey> readKeys=selector.selectedKeys();
 			for(Iterator<SelectionKey> iterator=readKeys.iterator();iterator.hasNext();) {
-				System.out.println("进入客户端轮询");
+				//System.out.println("进入客户端轮询");
 				SelectionKey key=iterator.next();
 				iterator.remove();
 				HandleMsg(key);
@@ -75,7 +76,7 @@ public class Server {
 				
 			}
 			else if(key.isReadable()) {
-				System.out.println("开始读数据。。。。");
+				//System.out.println("开始读数据。。。。");
 				SocketChannel client=(SocketChannel)key.channel();
 				readBuffer.clear();
 				String receiveMsg= ReadMessage(client);
@@ -108,22 +109,24 @@ public class Server {
           			CharBuffer charBuffer = decoder.decode(readBuffer);
           			result = charBuffer.toString();
       			}
+      			else
+      			{
+      				sc.close();
+      			}
     		}catch (IOException e) {
-      			System.out.println("接收用户发言信息时异常，原因  -------->  " + e.getMessage());
+      			try {
+					sc.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+					System.out.println("客户端监听关闭异常："+e1.getMessage());
+					Log.writeToError("客户端监听关闭异常："+e1.getMessage());
+				}
+    			System.out.println("接收用户发言信息时异常，原因  -------->  " + e.getMessage());
       			Log.writeToError("接收用户发送信息时异常，原因  -------->  " + e.getMessage());
+      			
    		}
     		return result;
-  	}
-  	private void SendMsg(String msg)
-  	{
-  		
-  	}
-  	private void Display(String[] temp)
-  	{
-  		for(int i=0;i<temp.length;i++)
-  		{
-  			System.out.print(temp[i]+",");
-  		}
   	}
 	
 }
