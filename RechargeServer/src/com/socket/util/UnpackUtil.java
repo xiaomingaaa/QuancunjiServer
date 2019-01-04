@@ -15,6 +15,11 @@ import com.socket.controller.WaterCardInfo;
  *
  */
 public class UnpackUtil {
+	/**
+	 * ½âÎö°ü
+	 * @param pack
+	 * @return
+	 */
 	public static JSONArray GetBody(String pack)
 	{		JSONArray array=new JSONArray();
 		try {

@@ -1,5 +1,5 @@
 {
 	"port":35001,
-	"dbuser":"root",
-	"dbpwd":"root"
+	"dbuser":"weihu",
+	"dbpwd":"mypwd"
 }

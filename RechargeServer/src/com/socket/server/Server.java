@@ -70,7 +70,8 @@ public class Server {
 				SocketChannel client=serverSocketChannel.accept();
 				if(client!=null) {
 					client.configureBlocking(false);
-					client.register(selector, SelectionKey.OP_READ|SelectionKey.OP_WRITE);
+					//在此处去掉write
+					client.register(selector, SelectionKey.OP_READ);
 					System.out.println("客户端建立连接");
 				}
 				
@@ -93,7 +94,7 @@ public class Server {
 				Log.writeToError("接受到的数据为："+receiveMsg);
 			}
 		}catch (Exception e) {
-			
+			Log.writeToError("处理SelectionKey时出现错误："+e.getMessage());
 		}
 	}
 	//接收用户发言信息
