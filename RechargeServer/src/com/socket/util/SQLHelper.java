@@ -115,7 +115,7 @@ public class SQLHelper {
 			}
 			
 		 }	
-		 if(array.length()>0)
+/*		 if(array.length()>0)
 		 {
 			 try {
 				System.out.println(array.getJSONObject(0).toString());
@@ -123,7 +123,7 @@ public class SQLHelper {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		 }
+		 }*/
 		 Release();
 		 return array;
 	}

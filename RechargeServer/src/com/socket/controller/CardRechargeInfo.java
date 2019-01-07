@@ -115,9 +115,12 @@ public class CardRechargeInfo {
 				{
 					object=array.getJSONObject(0);
 					long time= System.currentTimeMillis()/1000;
+					int id=object.getInt("id");
 					String updateSql="update zf_recharge_detail set is_active=1,balance=?,qctime=? where id=?";
-					Object[] params1= {money,time,object.getInt("id")};
-					if(helper.Update(updateSql, params1))
+					String updateBalance="update zf_card_info set balance=? where card_no=?";
+					Object[] params2= {money,cardno};
+					Object[] params1= {money,time,id};
+					if(helper.Update(updateSql, params1)&&helper.Update(updateBalance, params2))
 					{
 						flag=true;
 					}

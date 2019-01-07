@@ -33,7 +33,7 @@ class CardRechargeInfoTest {
 	void testUpdateStatus()
 	{
 		boolean a=false;
-		a=waterCardInfo.UpdateSatus("124932", "56777", 23);
+		a=waterCardInfo.UpdateSatus("124932", "56758", 23.58);
 		System.out.println(a);
 	}
 }
